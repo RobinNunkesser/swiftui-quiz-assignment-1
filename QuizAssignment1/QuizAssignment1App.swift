@@ -11,7 +11,7 @@ import SwiftUI
 struct QuizAssignment1App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(ContentObservable())
         }
     }
 }
