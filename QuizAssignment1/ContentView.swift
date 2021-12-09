@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var environment = ContentObservable()
+    @EnvironmentObject var environment : ContentObservable
         
     var body: some View {
         Text("Hello, world!")
@@ -16,12 +16,11 @@ struct ContentView: View {
             .onAppear {
                 debugPrint(environment.questions)
             }
-            .environmentObject(environment)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(ContentObservable())
     }
 }

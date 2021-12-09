@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct QuizAssignment1App: App {
+    
+    @StateObject var environment = ContentObservable()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(environment)
         }
     }
 }
